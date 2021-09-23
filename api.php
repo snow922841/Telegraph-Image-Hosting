@@ -14,7 +14,7 @@ if(!is_uploaded_file($file['tmp_name'])){
 }
 
     $ch = curl_init();
-    $url = 'https://timg.pages.dev/upload';
+    $url = 'telegraph-image-hosting.pages.dev/upload';
     $post_data = array('file' => new \CURLFile(realpath($tmp_name)));
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -27,7 +27,7 @@ if(!is_uploaded_file($file['tmp_name'])){
     $result = array(
         'code' => '200',
         'status' => 'success',
-        'src' => 'https://timg.pages.dev'.$src
+        'src' => 'telegraph-image-hosting.pages.dev'.$src
         );
     $result
     = json_encode($result,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
